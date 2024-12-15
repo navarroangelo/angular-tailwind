@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 // IMPORTING COMPONENTS
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -11,6 +12,7 @@ import { FeaturedComponent } from './components/featured/featured.component';
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     HeaderComponent,
     FooterComponent,
     GalleryComponent,
@@ -20,5 +22,5 @@ import { FeaturedComponent } from './components/featured/featured.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'angular-tailwind';
+  title = 'Chronos Atelier';
 }

@@ -1,32 +1,21 @@
 <div class="container mx-auto px-4 py-16" id="gallery">
-    <h2 class="text-4xl font-bold text-center mb-12">Our Collection</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="assets/rolex-daytona.jpg" alt="Rolex Daytona" class="w-full h-64 object-cover" />
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Rolex Daytona</h3>
-                <p class="text-gray-600">
-                    A legendary chronograph that combines sportiness with elegance, featuring a tachymetric scale and precise chronograph movement.
-                </p>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="assets/omega-speedmaster.png" alt="Omega Speedmaster" class="w-full h-64 object-cover" />
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Omega Speedmaster</h3>
-                <p class="text-gray-600">
-                    The first watch worn on the moon, featuring precise chronograph functionality.
-                </p>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="assets/ap-royal-oak.jpg" alt="Audemars Piguet Royal Oak" class="w-full h-64 object-cover" />
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Audemars Piguet Royal Oak</h3>
-                <p class="text-gray-600">
-                    A masterpiece of angular design with its signature octagonal bezel.
-                </p>
-            </div>
-        </div>
+  <h2 class="text-4xl font-bold text-center mb-12">Our Collection</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      *ngFor="let watch of watches"
+      class="bg-white rounded-lg shadow-lg overflow-hidden"
+    >
+      <img
+        [src]="watch.image"
+        [alt]="watch.name"
+        class="w-full h-64 object-cover"
+      />
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">{{ watch.name }}</h3>
+        <p class="text-gray-600">
+          {{ watch.description }}
+        </p>
+      </div>
     </div>
+  </div>
 </div>

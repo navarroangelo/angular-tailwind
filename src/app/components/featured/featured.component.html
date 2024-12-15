@@ -1,20 +1,53 @@
 <div class="container mx-auto px-4 py-16" id="featured">
-    <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="md:w-1/2">
-            <h2 class="text-4xl font-bold mb-4">Patek Philippe Nautilus</h2>
-            <p class="text-gray-600 text-lg mb-6">
-                The epitome of luxury sports watches, our Watch of the Year combines elegant design with exceptional craftsmanship. Featuring a gradient blue dial, integrated bracelet, and the legendary caliber 26-330 S C movement, this timepiece represents the pinnacle
-                of horological excellence.
-            </p>
-            <button class="border-2 border-gray-800 px-6 py-2 hover:bg-gray-800 hover:text-white transition-colors">
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <div class="md:w-1/2">
+      <h2 class="text-4xl font-bold mb-4">{{ watchTitle }}</h2>
+      <p class="text-gray-600 text-lg mb-6">
+        {{ watchDescription }}
+      </p>
+      <button
+        class="border-2 border-gray-800 px-6 py-2 hover:bg-gray-800 hover:text-white transition-colors"
+      >
         Learn More
       </button>
-        </div>
-        <div class="md:w-1/2 relative">
-            <img src="assets/patek-philippe-nautilus.png" alt="Patek Philippe Nautilus" class="rounded-lg shadow-xl w-full" />
-            <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-md">
-                <span class="font-bold text-gray-800">Watch of the Year</span>
-            </div>
-        </div>
     </div>
+    <div class="md:w-1/2 relative">
+      <img
+        [src]="watchImage"
+        alt="Patek Philippe Nautilus"
+        class="rounded-lg shadow-xl w-full"
+      />
+      <div
+        class="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-md"
+      >
+        <span class="font-bold text-gray-800">{{ watchAward }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TWO-WAY -->
+  <div class="mt-8">
+    <h3 class="text-2xl font-semibold mb-4">
+      Enter the Raffle for the Watch of The Year
+    </h3>
+    <div class="flex flex-col gap-4">
+      <input
+        type="text"
+        [(ngModel)]="userName"
+        placeholder="Enter Your Full Name"
+        class="border-2 border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gray-800"
+      />
+
+      <p class="text-lg text-gray-600">
+        Your Entry: <span class="font-semibold">{{ userName }}</span>
+      </p>
+
+      <button
+        (click)="submitEntry()"
+        class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+      >
+        Submit Entry
+      </button>
+    </div>
+  </div>
 </div>
